@@ -1,0 +1,530 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0;}
+@font-face { /* 나눔고딕 Regular */
+    font-family: 'Nanum Gothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.eot);
+    src: url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+         url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.woff2) format('woff2'),
+         url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.woff) format('woff'),
+         url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.ttf) format('truetype');
+  }
+  @font-face { /* 나눔고딕 Bold */
+    font-family: 'Nanum Gothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Bold.eot);
+    src: url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Bold.eot?#iefix) format('embedded-opentype'),
+         url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Bold.woff2) format('woff2'),
+         url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Bold.woff) format('woff'),
+         url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Bold.ttf) format('truetype');
+  }
+  @font-face { /* 나눔고딕 ExtraBold */
+    font-family: 'Nanum Gothic';
+    font-style: normal;
+    font-weight: 800;
+    src: url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-ExtraBold.eot);
+    src: url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-ExtraBold.eot?#iefix) format('embedded-opentype'),
+         url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-ExtraBold.woff2) format('woff2'),
+         url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-ExtraBold.woff) format('woff'),
+         url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-ExtraBold.ttf) format('truetype');
+  }
+  
+  html, body {
+    font-family: 'Nanum Gothic', sans-serif;
+    -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
+
+  }
+  a {
+      text-decoration: none;
+      color: white;
+    }
+  a:hover {
+      color: white
+    }
+
+    .bottom {
+        position: relative;
+        border: 1px solid black;
+        background-color: #333333;
+        width: 100%;
+        height: 25rem;
+
+    }
+    .inner_case_bottom {
+        position: absolute;
+        height: 85%;
+        width: 62.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .bottom_text_1 {
+        position: relative;
+        color: white;
+        font-size: 1.92rem;
+        text-align: left;
+        font-style: normal;
+        font-family: 'Nanum Gothic', sans-serif;
+        font-weight: 800;
+        left: 45px;
+    }
+
+    .bottom_text_2 {
+        position: relative;
+        color: #a0a0a0;
+        font-size: 0.72rem;
+        text-align: left;
+        font-style: normal;
+        font-family: 'Nanum Gothic', sans-serif;
+        font-weight: 500;
+        top: 10px;
+        left: 45px;
+    }
+
+    .bottom_text_3 {
+        position: relative;
+        color: #666666;
+        font-size: 0.72rem;
+        text-align: left;
+        font-style: normal;
+        font-family: 'Nanum Gothic', sans-serif;
+        font-weight: 500;
+        top: 6.3rem;
+        left: 45px;
+    }
+
+    .bottom_text_4 {
+        position: relative;
+        color: #a6a6a6;
+        font-size: 0.96rem;
+        text-align: left;
+        font-style: normal;
+        font-family: 'Nanum Gothic', sans-serif;
+        font-weight: 500;
+        top: 9rem;
+        left: 45px;
+    }
+    .lhr5{
+        position: relative;
+        background-color: #6c6c6c;
+        border: 0;
+        opacity: 100;
+        top: 150px;
+    }
+
+    .lhr5_1 {
+        position: relative;
+        background-color: #6c6c6c;
+        border: 0;
+        opacity: 100;
+        top: 134px;
+    }
+
+    .login_start {
+    position: absolute;
+    top: 14px;
+    left: 70%;
+    text-align: left;
+    color: white;
+    font-style: normal;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+
+}
+    .inner_case {
+        position: relative;
+        height: 100%;
+        width: 62.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .login_back{
+        background-color: #3461ad;
+        height: 3.1rem;
+    }
+    .manu_back{
+        height: 6.2rem;
+        width: 100%;
+    }
+    .move_menu{
+        position: relative;
+        display: flex;
+        text-align: right;
+        color: black;
+        font-style: normal;
+        font-family: 'Nanum Gothic', sans-serif;
+        font-weight: 700;
+        font-size: 1rem;
+        top: 50%;
+        left: 70%;
+        width: 300px;
+        transform: translateY(-50%);
+    }
+    .move_menu a :hover{
+        color: black;
+    }
+    .move_menu a{
+        color: black;
+    }
+    .main_photo_back{
+        height: 18.75rem;
+        width: 100%;
+        background-image: url(../../img/company/회사소개.jpg);
+        object-fit: contain;
+    }
+    .logo{
+    position: absolute;
+
+    background-image: url(../../img/main/logo.png);
+    width: 63px;
+    height: 63px;
+    top: 16%;
+    left: 1%;
+    object-fit: contain;
+}
+    .main_text_1{
+        position: relative;
+        top: 33%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        color: white;
+        font-style: normal;
+        font-family: 'Nanum Gothic', sans-serif;
+        font-weight: 700;
+        font-size: 0.8rem;
+    }
+    .main_text_2{
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        color: white;
+        font-style: normal;
+        font-family: 'Nanum Gothic', sans-serif;
+        font-weight: 700;
+        font-size: 2.6rem;
+    }
+    .title_1{
+        height: 10rem;
+      position: relative;
+      z-index:-1;
+          margin-bottom: 4rem;
+    }
+    .sub_text2{
+        position: relative;
+        top: 70%;
+        transform: translateY(-70%);
+        text-align: left;
+        color: black;
+        font-style: normal;
+        font-family: 'Nanum Gothic', sans-serif;
+        font-weight: 700;
+        font-size: 2.6rem;
+    }
+    .sub_text1{
+        position: relative;
+        top: 43%;
+        text-align: left;
+        color: black;
+        font-style: normal;
+        font-family: 'Nanum Gothic', sans-serif;
+        font-weight: 400;
+        font-size: 1.3rem;
+    }
+    .search{
+        height: 4rem;
+    }
+    .search_move_1{
+        position: relative;
+        left: 54%;
+        width: 9rem;
+    }
+    .search_move_2{
+        position: relative;
+        left: 56.9%;
+        width: 15rem;
+    }
+    .search_move_3{
+        position: relative;
+        left: 54.63%;
+        width: 10rem;
+    }
+    .btn-search{
+        background-color: #336699;
+        color: white;
+        border-radius: 0px;
+    }
+    .control{
+        border-radius: 0px;
+    }
+    .table_all{
+    border: 0px;
+    width: 100%;
+    margin-bottom: 3rem;
+
+}
+.table_head{
+    border-top: 1px solid #999999;
+    background-color: #fafafa;
+    line-height: 3rem;
+}
+.table_body{
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+    line-height: 3rem;
+
+}
+.table_foot{
+    padding: 2rem;
+    border: 0px;
+    height: 150px;
+}
+tr{
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #999999;
+
+}
+.table_padding{
+    padding: 30px;
+}
+.page-link{ 
+    color: black;
+    border-radius: 0px;
+}
+.page-item:last-child .page-link {
+    border-top-right-radius: 0rem;
+    border-bottom-right-radius: 0rem;
+}
+.page-item:first-child .page-link {
+    border-top-left-radius: 0rem;
+    border-bottom-left-radius: 0rem;
+}
+.button1{ 
+    position: relative;
+    bottom: 3px;
+    padding: 5px;
+    color: black;
+}
+.drop_manu{
+    height: 53px;
+    border: 1px solid #999999;
+    z-index: 100;
+}
+.photo{
+	background-image: url(../../img/notice/화살표.png);
+	width: 38px;
+	height: 28px;
+	object-fit: cover;
+	position: absolute;
+	bottom:23.5%;
+	left:70%;
+	z-index:999;
+
+}
+.dropdown_img{
+    background-image: url(../../img/notice/home.jpg);
+    position: relative;
+    bottom: 1px;
+    width: 53px;
+    height: 53px;
+}
+.menu{
+    font-style: normal;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 51px;
+    width: 19rem;
+    height:100%;
+    position: relative;
+    bottom:0.5px;
+	background-color: white;
+	display:flex;
+}
+.menu a{
+	color:black;
+}
+.dropdown{
+	position:relative;
+	z-index: 100;
+	flex-direction: column;
+	z-index: 100;
+	width: 100%;
+	
+}
+.dropdown_main_1{
+	display:block;
+	border:0.5px solid gray;
+	background-color: white;
+}
+.dropdown_main_2{
+	display:none;
+	border:0.5px solid gray;
+	background-color: white;
+}
+.dropdown_main_3{
+	display:none;
+	border:0.5px solid gray;
+	background-color:white;
+	z-index: 100;
+}
+
+.dropdown_sub_1{
+	display:block;
+	position:relative;
+	background-color:white;
+	flex-direction: column;
+	width: 100%;
+}
+.dropdown_sub_2{
+	display:none;
+	position:relative;
+	background-color:white;
+	flex-direction: column;
+	width: 100%;
+}
+.dropdown_sub_3{
+	position:relative;
+	display:none;
+	background-color:white;
+	flex-direction: column;
+	width: 100%;
+}
+.dropdown_sub_3_1{
+	background-color:white;
+	display:block;
+	border:0.5px solid gray;
+}
+.dropdown_sub_3_2{
+	background-color:white;
+	display:block;
+	border:0.5px solid gray;
+}
+.dropdown_sub_3_3{
+	background-color:white;
+	display:block;
+	border:0.5px solid gray;
+}
+.dropdown_sub_3_4{
+	background-color:white;
+	display:block;
+	border:0.5px solid gray;
+}
+.dropdown_sub_2_1{
+	display:block;
+	background-color:white;
+	border:0.5px solid gray;
+}.dropdown_sub_2_2{
+	display:block;
+	background-color:white;
+	border:0.5px solid gray;
+}.dropdown_sub_2_3{
+	display:block;
+	background-color:white;
+	border:0.5px solid gray;
+}.dropdown_sub_2_4{
+	display:block;
+	background-color:white;
+	border:0.5px solid gray;
+}
+.passwd{
+	width: 100%;
+	height: 30rem;
+}
+.input_{
+	font-style: normal;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-align: center;
+    line-height:3rem;
+    position: relative;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+.sub_text3{
+	position: relative;
+	height: 30rem;
+	width: 40%;
+	margin-right: 10%;
+}
+.info_3{
+	display: flex;
+	height: 30rem;
+	width: 100%;
+}
+.sub_text_img{
+	background-image: url("../../img/company/human2.jpg");
+    width: 242px;
+    height: 242px;
+}
+.map{
+	width: 50%;
+    height: 400px;
+}
+.road{
+	width: 31%;
+    margin-left: 43px;
+}
+.mid_title{
+font-style: normal;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.division_button{
+	height: 5rem;
+	width: 100%;
+	display: flex;
+}
+.division_button_check{
+	color:white;
+	background-color: #336699;
+	width: 24.25%;
+	height: 3rem;
+	display: inline-block;
+}
+.division_button_nocheck{
+	color:white;
+	background-color: #999999;
+	width: 24.25%;
+	height: 3rem;
+	display: inline-block;
+}
+.division_info_division1{
+	height: 40rem;
+	position: relative;
+	top: 1rem;
+	display: block;
+}
+.division_info_division2{
+	height: 40rem;
+	position: relative;
+	top: 1rem;
+	display: none;
+}
+.division_info_division3{
+	height: 40rem;
+	position: relative;
+	top: 1rem;
+	display: none;
+}
+.division_info_division4{
+	height: 40rem;
+	position: relative;
+	top: 1rem;
+	display: none;
+}

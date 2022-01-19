@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ <mapper namespace="id">
+ <sql id="search">
+		<where>
+			<if test="search==1">
+				id LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+			</if>
+			<if test="search==2">
+				jobCode LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+			</if>
+			<if test="search==3">
+				grade LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+			</if>
+		</where>
+	</sql>
+ 	<select id="list" resultType="Partner">
+		SELECT id,jobCode,grade
+		FROM partner
+		<include refid="search"></include>
+		LIMIT #{offset},#{perPage}
+	</select>
+ 	<select id="total" resultType="Integer">
+		SELECT COUNT(*) FROM partner
+		<include refid="search"></include>
+	</select>
+	<select id="item" resultType="Partner">
+      SELECT id FROM partner
+      WHERE id=#{id}
+   </select>
+   <update id="update">
+      UPDATE partner
+      SET passwd=PASSWORD(#{passwd})
+      WHERE id=#{id}
+   </update>
+
+ </mapper>

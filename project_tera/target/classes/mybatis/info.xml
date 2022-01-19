@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="info">
+<sql id="search">
+		<where>
+			<if test="search==1">
+				info.data=#{keyword}
+			</if>
+			<if test="search==2">
+				info.dataName LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+			</if>
+
+			<if test="search==3">
+				id LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+			</if>
+			<if test="search==4">
+				info.dataDate LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+			</if>
+		</where>
+	</sql>
+	
+
+<select id="list" resultMap="InfoMap">
+		SELECT info.*,
+		info_file.code code,
+		info_file.filename filename,
+		info_file.UUID UUID,
+		info_file.info infoCode
+		FROM info left Join info_file on info.data=info_file.info
+		<include refid="search"></include>
+		order by info.data desc
+		LIMIT #{offset},#{perPage}
+</select>
+
+<resultMap type="Info" id="InfoMap">
+	<id column="data" property="data"/>
+	<result column="dataName" property="dataName"/>
+	<result column="dataDate" property="dataDate"/>
+	<result column="dataInfo" property="dataInfo"/>
+	<result column="noticeCount" property="noticeCount"/>
+	<result column="id" property="id"/>
+	<collection column="info" property="multfile" ofType="InfoFile" javaType="ArrayList">
+		<id column="code" property="code"/>
+		<result column="filename" property="filename"/>
+		<result column="UUID" property="UUID"/>
+		<result column="info" property="info"/>
+	</collection>
+</resultMap>
+<select id="item" resultMap="InfoMap">
+		SELECT info.*, 
+		info_file.code code, 
+		info_file.filename filename, 
+		info_file.UUID uuid,
+		info_file.info info
+		FROM info left Join info_file on info.data=info_file.info
+		WHERE Info.data=#{data}
+	</select>
+
+<insert id="add">
+		INSERT INTO info
+		VALUES (null,#{dataName},date_format(NOW(),'%Y-%c-%e'),#{dataInfo},#{id},0)
+		<selectKey keyProperty="data" resultType="Integer" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+</insert>
+	<select id="total" resultType="Integer">
+		SELECT COUNT(*) FROM info
+		<include refid="search"></include>
+	</select>
+	<update id="update">
+		UPDATE info
+		SET dataName=#{dataName},dataDate=date_format(NOW(),'%Y-%c-%e'),dataInfo=#{dataInfo}
+		WHERE data=#{data}
+	</update>
+
+	<delete id="delete">
+		DELETE FROM info
+		WHERE data=#{data}
+	</delete>
+	<update id="count">
+		UPDATE info
+		set dataCount=dataCount+1
+		where data=#{data}
+	</update>
+	<select id="itemM" resultMap="InfoMap">
+		SELECT info.*, 
+		info_file.code code, 
+		info_file.filename filename, 
+		info_file.UUID uuid,
+		info_file.info info
+		FROM info left Join info_file on info.data=info_file.info
+		WHERE Info.id=#{id}
+	</select>
+	<delete id="deleteM">
+		DELETE FROM info
+		WHERE id=#{id}
+	</delete>
+	
+</mapper>
