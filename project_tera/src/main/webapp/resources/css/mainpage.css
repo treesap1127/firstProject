@@ -1,0 +1,550 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0;}
+@font-face { /* 나눔고딕 Regular */
+    font-family: 'Nanum Gothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.eot);
+    src: url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+         url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.woff2) format('woff2'),
+         url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.woff) format('woff'),
+         url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.ttf) format('truetype');
+  }
+  @font-face { /* 나눔고딕 Bold */
+    font-family: 'Nanum Gothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Bold.eot);
+    src: url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Bold.eot?#iefix) format('embedded-opentype'),
+         url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Bold.woff2) format('woff2'),
+         url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Bold.woff) format('woff'),
+         url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Bold.ttf) format('truetype');
+  }
+  @font-face { /* 나눔고딕 ExtraBold */
+    font-family: 'Nanum Gothic';
+    font-style: normal;
+    font-weight: 800;
+    src: url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-ExtraBold.eot);
+    src: url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-ExtraBold.eot?#iefix) format('embedded-opentype'),
+         url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-ExtraBold.woff2) format('woff2'),
+         url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-ExtraBold.woff) format('woff'),
+         url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-ExtraBold.ttf) format('truetype');
+  }
+  
+  html, body {
+    font-family: 'Nanum Gothic', sans-serif;
+    -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
+
+  }
+  a {
+      text-decoration: none;
+      color: white;
+    }
+  a:hover {
+      color: white
+    }
+
+
+span>hr {
+    position: relative;
+    size: 2px;
+    color: white;
+    opacity: 20%;
+    top: 9%;
+}
+
+.main {
+    position: relative;
+    display: flex;
+    background-color: brown;
+    width: 100%;
+    height: 50rem;
+}
+
+.bottom {
+    position: relative;
+    border: 1px solid black;
+    background-color: #333333;
+
+    width: 100%;
+    height: 25rem;
+
+}
+
+.inner_case {
+    position: absolute;
+    height: 100%;
+    width: 62.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.inner_case_bottom {
+    position: absolute;
+    height: 85%;
+    width: 62.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.login_start {
+    position: absolute;
+    top: 14px;
+    left: 70%;
+    text-align: left;
+    color: white;
+    font-style: normal;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+
+}
+.logo{
+    position: absolute;
+    background-image: url(../img/main/logo.png);
+    width: 63px;
+    height: 63px;
+    top: 2.5%;
+    left: 1%;
+    object-fit: contain;
+}
+
+.manu_top_link {
+    position: absolute;
+    top: 3.3rem;
+    left: 60.15%;
+    text-align: left;
+    width: 40%;
+    font-style: normal;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    word-spacing: 2.3rem;
+    display: block;
+    float: left;
+}
+
+.center {
+    background-image: url(../img/main/mainTop\(용광로\).jpg);
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.midle{
+	background-image: url("../img/main/main_sub_2.jpg");
+	width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.under{
+	background-image: url("../img/main/main_sub_3.jpg");
+	width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.main_top_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.main_top_yellow {
+    font-style: normal;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 800;
+    font-size: 2.9rem;
+    color: #ffcc00;
+}
+
+.main_top_white_big {
+    font-style: normal;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 800;
+    font-size: 2.9rem;
+}
+
+.main_top_white_small {
+    font-style: normal;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.main_top_bottom {
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    background-image: url(../img/main/icon_scroll\ 복사.png);
+    width: 83px;
+    height: 54px;
+    object-fit: contain;
+}
+
+.mid_title {
+    height: 7rem;
+    left: 50%;
+    color: white;
+    font-style: normal;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 800;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 3.5rem;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+}
+
+.mid_main {
+    width: 12rem;
+    height: 30rem;
+    background: whitesmoke;
+}
+.mid_main_top_1 {
+    width: 100%;
+    height: 43%;
+    background-image: url("../img/main/steel_2.jpg");
+}
+.mid_main_top_2 {
+    width: 100%;
+    height: 43%;
+    background-image: url("../img/main/press_2.jpg");
+}
+.mid_main_top_3 {
+    width: 100%;
+    height: 43%;
+    background-image: url("../img/main/iron_2.jpg");
+}
+.mid_main_top_4 {
+    width: 100%;
+    height: 43%;
+    background-image: url("../img/main/pipe_2.jpg");
+}
+
+.mid_main_bottom1 {
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    color: #336699;
+    font-style: normal;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+	margin-top: 10px;
+}
+
+.mid_main_bottom2 {
+    width: 100%;
+    height: 40%;
+    text-align: center;
+    font-style: normal;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    padding: 0.7rem;
+    margin-top: 10px;
+}
+
+.info_box1 {
+    float: left;
+    position: relative;
+    margin-top: 6.5rem;
+    margin-bottom: 6.5rem;
+    width: 19.5rem;
+    height: 38.2rem;
+    background-color: #003399;
+    left: 45px;
+}
+
+.lhr {
+    position: relative;
+    border: 0;
+    height: 2px;
+    background-color: white;
+    width: 4.5rem;
+    top: 2%;
+    left: 8%;
+    opacity: 100;
+}
+
+.lhr2 {
+    position: relative;
+    border: 0;
+    height: 2px;
+    background-color: white;
+    width: 3.6rem;
+    top: 3.7rem;
+    left: 26px;
+    opacity: 100;
+}
+
+.lhr3 {
+    position: relative;
+    border: 0;
+    height: 2px;
+    background-color: white;
+    width: 3.6rem;
+    top: 3.6rem;
+    left: 25px;
+    opacity: 100;
+}
+
+.lhr4 {
+    position: relative;
+    border: 0;
+    height: 2px;
+    background-color: white;
+    width: 3.6rem;
+    top: 3.58rem;
+    left: 25px;
+    opacity: 100;
+}
+
+.lhr5 {
+    position: relative;
+    background-color: #6c6c6c;
+    border: 0;
+    opacity: 100;
+    top: 150px;
+}
+
+.lhr5_1 {
+    position: relative;
+    background-color: #6c6c6c;
+    border: 0;
+    opacity: 100;
+    top: 134px;
+}
+
+.info_box1_1 {
+    position: relative;
+    font-size: 2.4rem;
+    color: white;
+    width: 13rem;
+    left: 25px;
+    top: 30px;
+    text-align: left;
+    font-style: normal;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 800;
+
+}
+
+.info_box1_2 {
+    position: relative;
+    font-size: 1.2rem;
+    color: white;
+    top: 2rem;
+    left: 25px;
+    text-align: left;
+    font-style: normal;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 500;
+    width: 16.375rem;
+}
+
+/*여백 값 48px 왼쪽이 37rem 이니까 37rem-48px 나누기2네 그럼 긱 17rem
+    끝 여백값들은 45px들 
+    62.5rem-37rem-48px-45px-45px*/
+.info_box2 {
+    position: absolute;
+    width: 34.375rem;
+    height: 17rem;
+    background-color: #1a4ba5;
+    text-align: left;
+    left: 25rem;
+    top: 6.45rem;
+}
+
+.info_box2_1 {
+    position: absolute;
+    font-size: 1.9rem;
+    width: 150px;
+    height: 20%;
+    left: 25px;
+    top: 30px;
+
+    font-style: normal;
+    color: white;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 800;
+}
+
+.info_box2_2 {
+    position: absolute;
+    font-size: 0.9rem;
+    top: 7rem;
+    right: 7.7375rem;
+    color: white;
+    text-align: left;
+    font-style: normal;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 500;
+    width: 25rem;
+    height: 3rem;
+}
+
+.info_box3 {
+    float: left;
+    position: relative;
+    width: 15.6875rem;
+    height: 17rem;
+    background-color: #1a74ce;
+    text-align: left;
+    left: 5.5rem;
+    top: 27.5rem;
+}
+
+.info_box3_1 {
+    position: absolute;
+    font-size: 1.9rem;
+    left: 25px;
+    top: 30px;
+    color: white;
+    text-align: left;
+    font-style: normal;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 800;
+
+}
+
+.info_box3_2 {
+    position: absolute;
+    font-size: 0.9rem;
+    top: 7rem;
+    left: 25px;
+    color: white;
+    text-align: left;
+    font-style: normal;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 500;
+    width: 12rem;
+}
+
+.info_box4 {
+    position: absolute;
+    width: 15.6875rem;
+    height: 17rem;
+    background-color: #1a74ce;
+    text-align: left;
+    left: 43.7rem;
+    bottom: 5.4rem;
+
+}
+
+.info_box4_1 {
+    position: absolute;
+    font-size: 1.9rem;
+    left: 25px;
+    bottom: 12.4rem;
+    color: white;
+    text-align: left;
+    font-style: normal;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 800;
+
+}
+
+.info_box4_2 {
+    position: absolute;
+    font-size: 0.9rem;
+    top: 6.85rem;
+    left: 25px;
+    color: white;
+    text-align: left;
+    font-style: normal;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 500;
+    width: 12rem;
+}
+
+.info_icon2 {
+    left: 90%;
+    top: 80%;
+    position: absolute;
+    background-image: url(../img/main/인증서-1.png);
+    width: 46px;
+    height: 38px;
+    object-fit: contain;
+}
+
+.info_icon3 {
+    left: 80%;
+    top: 80%;
+    position: absolute;
+    background-image: url(../img/main/조직도-1.png);
+    width: 43px;
+    height: 44px;
+    object-fit: contain;
+}
+
+.info_icon4 {
+    left: 80%;
+    top: 80%;
+    position: absolute;
+    background-image: url(../img/main/고객\ 상담-1.png);
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.bottom_text_1 {
+    position: relative;
+    color: white;
+    font-size: 1.92rem;
+    text-align: left;
+    font-style: normal;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 800;
+    top: px;
+    left: 45px;
+}
+
+.bottom_text_2 {
+    position: relative;
+    color: #a0a0a0;
+    font-size: 0.72rem;
+    text-align: left;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    top: 10px;
+    left: 45px;
+}
+
+.bottom_text_3 {
+    position: relative;
+    color: #666666;
+    font-size: 0.72rem;
+    text-align: left;
+    font-style: normal;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 500;
+    top: 6.3rem;
+    left: 45px;
+}
+
+.bottom_text_4 {
+    position: relative;
+    color: #a6a6a6;
+    font-size: 0.96rem;
+    text-align: left;
+    font-style: normal;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 500;
+    top: 9rem;
+    left: 45px;
+}

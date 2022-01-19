@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="notice">
+<sql id="search">
+		<where>
+			<if test="search==1">
+				notice.notice=#{keyword}
+			</if>
+			<if test="search==2">
+				notice.noticeName LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+			</if>
+
+			<if test="search==3">
+				id LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+			</if>
+			<if test="search==4">
+				notice.noticeDate LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+			</if>
+		</where>
+	</sql>
+	
+
+<select id="list" resultMap="NoticeMap">
+		SELECT notice.*,
+		notice_file.code code,
+		notice_file.filename filename,
+		notice_file.UUID UUID,
+		notice_file.notice_code noticeCode
+		FROM notice left Join notice_file on notice.notice=notice_file.notice_code
+		<include refid="search"></include>
+		order by notice desc
+		LIMIT #{offset},#{perPage}
+</select>
+
+<resultMap type="Notice" id="NoticeMap"><!-- 1대 다 관계일떄 쓰네! -->
+	<id column="notice" property="notice"/>
+	<result column="noticeName" property="noticeName"/>
+	<result column="noticeDate" property="noticeDate"/>
+	<result column="noticeInfo" property="noticeInfo"/>
+	<result column="noticeCount" property="noticeCount"/>
+	<result column="id" property="id"/>
+	<result column="grade" property="grade"/>
+	<collection column="notice_code" property="multfile" ofType="NoticeFile" javaType="ArrayList">
+		<id column="code" property="code"/>
+		<result column="filename" property="filename"/>
+		<result column="UUID" property="UUID"/>
+		<result column="notice_code" property="noticeCode"/>
+	</collection>
+</resultMap>
+<select id="item" resultMap="NoticeMap">
+		SELECT notice.*, 
+		notice_file.code code, 
+		notice_file.filename filename, 
+		notice_file.UUID uuid,
+		notice_file.notice_code notice_code
+		FROM notice left Join notice_file on notice.notice=notice_file.notice_code
+		WHERE notice.notice=#{notice}
+	</select>
+
+<insert id="add">
+		INSERT INTO notice
+		VALUES (null,#{noticeName},date_format(NOW(),'%Y-%c-%e'),#{noticeInfo},#{id},0,#{grade})
+		<selectKey keyProperty="notice" resultType="Integer" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+</insert>
+	<select id="total" resultType="Integer">
+		SELECT COUNT(*) FROM notice
+		<include refid="search"></include>
+	</select>
+	<update id="update">
+		UPDATE notice
+		SET noticeName=#{noticeName},noticeDate=date_format(NOW(),'%Y-%c-%e'),noticeInfo=#{noticeInfo}
+		WHERE notice=#{notice}
+	</update>
+
+	<delete id="delete">
+		DELETE FROM notice
+		WHERE notice=#{notice}
+	</delete>
+	<update id="count">
+		UPDATE notice
+		set noticeCount=noticeCount+1
+		where notice=#{notice}
+	</update>
+	<select id="itemM" resultMap="NoticeMap">
+		SELECT notice.*, 
+		notice_file.code code, 
+		notice_file.filename filename, 
+		notice_file.UUID uuid,
+		notice_file.notice_code notice_code
+		FROM notice left Join notice_file on notice.notice=notice_file.notice_code
+		WHERE notice.id=#{id}
+	</select>
+	<delete id="deleteM">
+		DELETE FROM notice
+		WHERE id=#{id}
+	</delete>
+</mapper>
