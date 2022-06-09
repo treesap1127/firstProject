@@ -38,12 +38,14 @@ public class RootController {
 		if(partnerservice.login(partner)) {
 			session.setAttribute("partner", partner);
 			
-			return "redirect:../";
+			String target=(String) session.getAttribute("target");
+			
+			return path+"redirect:.."+(target==null?"/":target);
 		}
 		else {
 			ra.addFlashAttribute("msg", "false");
 			
-		return "redirect:.";}
+		return path+"redirect:.";}
 		 //값을 index로 보냄
 	}
 

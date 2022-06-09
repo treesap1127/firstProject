@@ -128,7 +128,7 @@ public class NoticeController {
 	try {
 				
 	              	
-	              String path = "E:\\upload\\"+list.getUUID()+"_"+filename; // 경로에 접근할 때 역슬래시('\') 사용
+	              String path = "D:\\upload\\"+list.getUUID()+"_"+filename; // 경로에 접근할 때 역슬래시('\') 사용
 	              
 	              response.setHeader("Content-Disposition", "attachment;filename=" +URLEncoder.encode(list.getFilename(), StandardCharsets.UTF_8)); 
 	              // 다운로드 되거나 로컬에 저장되는 용도로 쓰이는지를 알려주는 헤더
